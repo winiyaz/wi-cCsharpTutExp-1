@@ -5,17 +5,14 @@ on:
     branches:
       - main
     paths:
-      - "con1/ConsoleApp1/**" # Trigger only when changes are made to files in this folder
-
-permissions:
-  contents: write # Required for creating releases
+      - "con1/ConsoleApp1/**" # Correct path to match your folder structure
 
 jobs:
   build:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
-        os: [windows-latest, ubuntu-latest] # Add more OSes if needed (e.g., macos-latest)
+        os: [windows-latest, ubuntu-latest]
         include:
           - os: windows-latest
             runtime: win-x64
@@ -39,13 +36,13 @@ jobs:
             ${{ runner.os }}-nuget-
 
       - name: Restore dependencies
-        run: dotnet restore ConsoleApp1/ConsoleApp1.csproj
+        run: dotnet restore con1/ConsoleApp1/ConsoleApp1.csproj
 
       - name: Build
-        run: dotnet build ConsoleApp1/ConsoleApp1.csproj --configuration Release --no-restore
+        run: dotnet build con1/ConsoleApp1/ConsoleApp1.csproj --configuration Release --no-restore
 
       - name: Test
-        run: dotnet test ConsoleApp1/ConsoleApp1.csproj --no-build --verbosity normal --logger "trx;LogFileName=TestResults/test-results.trx"
+        run: dotnet test con1/ConsoleApp1/ConsoleApp1.csproj --no-build --verbosity normal --logger "trx;LogFileName=TestResults/test-results.trx"
 
       - name: Publish Test Results
         uses: actions/upload-artifact@v4
@@ -55,7 +52,7 @@ jobs:
         if: always()
 
       - name: Publish Single File Executable
-        run: dotnet publish ConsoleApp1/ConsoleApp1.csproj --configuration Release -r ${{ matrix.runtime }} --self-contained -o ./publish /p:PublishSingleFile=true /p:PublishTrimmed=true /p:TrimMode=link
+        run: dotnet publish con1/ConsoleApp1/ConsoleApp1.csproj --configuration Release -r ${{ matrix.runtime }} --self-contained -o ./publish /p:PublishSingleFile=true /p:PublishTrimmed=true /p:TrimMode=link
 
       - name: List Publish Directory (Debugging)
         run: |
@@ -67,14 +64,12 @@ jobs:
         if: matrix.os == 'windows-latest'
         shell: pwsh
         run: |
-          # Remove unnecessary files (e.g., .pdb, .xml)
           Remove-Item -Recurse -Force ./publish/*.pdb
           Remove-Item -Recurse -Force ./publish/*.xml
 
       - name: Clean Up Unnecessary Files (Linux)
         if: matrix.os == 'ubuntu-latest'
         run: |
-          # Remove unnecessary files (e.g., .pdb, .xml)
           find ./publish -name "*.pdb" -delete
           find ./publish -name "*.xml" -delete
 
@@ -90,7 +85,7 @@ jobs:
           tar -czvf con1-linux.tar.gz -C ./publish .
 
       - name: Clean Up (Optional)
-        shell: pwsh # Use PowerShell Core
+        shell: pwsh
         run: |
           if ("${{ matrix.os }}" -eq "windows-latest") {
             Remove-Item -Recurse -Force ./publish
