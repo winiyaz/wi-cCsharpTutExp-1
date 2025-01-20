@@ -5,7 +5,10 @@ on:
     branches:
       - main
     paths:
-      - "con1/ConsoleApp1/**" # Correct path to match your folder structure
+      - "con1/ConsoleApp1/**"
+
+permissions:
+  contents: write # Required for creating releases
 
 jobs:
   build:
@@ -114,8 +117,13 @@ jobs:
         with:
           path: ./artifacts
 
+      - name: Debug Artifacts
+        run: |
+          echo "Contents of ./artifacts:"
+          ls -R ./artifacts
+
       - name: Create Release
-        uses: softprops/action-gh-release@v1
+        uses: softprops/action-gh-release@v2
         with:
           tag_name: con1-v${{ github.run_number }}
           name: con1 Release v${{ github.run_number }}
