@@ -8,3 +8,5 @@
 This project is for your csharp testing
 
 # Correct Project Strcture
+
+1. Observe the project structure , this project was mostly for understanding that

@@ -4,9 +4,12 @@ namespace cst2.src
 {
     class Condi
     {
-        static void Lain(string[] args)
+        public static void CondiMain()
         {
             Uti.Label1("Hello World!");
         }
+
+
+
     }
 }

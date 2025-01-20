@@ -8,6 +8,7 @@ namespace cst2
         static void Main(string[] args)
         {
             Uti.Label1("Hello World!");
+            Condi.CondiMain();
         }
     }
 }
