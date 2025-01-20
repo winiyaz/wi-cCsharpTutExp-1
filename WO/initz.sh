@@ -21,12 +21,12 @@ b1() {
 
 c1() {
     echo -e "${GREEN}[-] Enter name of project ${NC}"
-    echo -e "${GREEN}[-]Command Execute - dot new console -n <NewName> ${NC}"
-    echo -e "${PURPLE}[*]Enter name of project: ${NC}"
+    echo -e "${GREEN}[-] Command Execute - dot new console -n <NewName> ${NC}"
+    echo -e "${PURPLE}[*] Enter name of project: ${NC}"
     read -r projekt
     CO1="dotnet new console -n $projekt"
     CO2="eza -T $projekt"
-    echo -e "${GREEN}[+] $projekt Created ${NC}"
+    echo -e "${GREEN}[+] $projekt Created - DrinkHerPiss${NC}"
     $CO1
     $CO2
 }
