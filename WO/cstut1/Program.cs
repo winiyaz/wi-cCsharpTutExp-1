@@ -1,4 +1,5 @@
 ﻿using System;
+using cstut1;
 
 namespace cstut1
 {
@@ -6,7 +7,7 @@ namespace cstut1
     {
         static void Main()
         {
-            Console.WriteLine("Hello World!");
+            Uti.Labeller("Hello World!");
         }
     }
 }

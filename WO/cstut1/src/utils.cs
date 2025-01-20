@@ -4,14 +4,16 @@ using System;
 
 namespace cstut1
 {
-    class Uti
+    public class Uti
     {
         public static void Labeller(string label)
         {
+            Console.ForegroundColor = ConsoleColor.Green;
             // Accept input from the user
-            Console.WriteLine(@"
-            {label}
+            Console.WriteLine(@$"
+{label}
             ");
+            Console.ResetColor();
 
         }
     }
