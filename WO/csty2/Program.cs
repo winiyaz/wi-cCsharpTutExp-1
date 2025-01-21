@@ -10,7 +10,7 @@ namespace csty2
         static void Main(string[] args)
         {
             Utils.Label1("Exception Handling");
-            Exce.Exce1();
+            Exce.ExceptionMet1();
 
         }
     }

@@ -5,6 +5,11 @@ namespace csty2.src
 {
     class Exce
     {
+        public static void ExceptionMet1()
+        {
+            Exce2();
+        }
+
         public static void Exce1()
         {
             Utils.Label2("Exception Study");
@@ -23,7 +28,10 @@ namespace csty2.src
                 Console.WriteLine(ex.Message);
                 Console.WriteLine(ex.StackTrace);
             }
+        }
 
+        public static void Exce2()
+        {
             Utils.Label2("Exception Study Out of Bonds");
 
             List<string> shapes = new List<string>{
@@ -35,7 +43,7 @@ namespace csty2.src
 
             try
             {
-                Console.WriteLine(shapes[3]);
+                Console.WriteLine(shapes[30]);
             }
             catch (IndexOutOfRangeException ex)
             {
