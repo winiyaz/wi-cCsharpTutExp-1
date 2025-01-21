@@ -29,18 +29,22 @@ namespace csty2.src
                 Console.WriteLine(ex.Message);
                 Console.WriteLine(ex.StackTrace);
             }
+            finally
+            {
+                Console.WriteLine("All Code Fucked Up");
+            }
         }
 
         public static void Exce2()
         {
             Utils.Label2("Exception Study Out of Bonds");
 
-            List<string> shapes = new List<string>{
+            List<string> shapes = [
                 "Square",
                 "Rectangle",
                 "Circle",
                 "Triangle"
-            };
+            ];
 
             try
             {
