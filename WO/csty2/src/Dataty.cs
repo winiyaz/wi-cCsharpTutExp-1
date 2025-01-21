@@ -77,6 +77,7 @@ namespace csty2.src
             Console.WriteLine("Total in Dictionary Datatype: " + dict.Count);
             Console.WriteLine("Total in Dictionary Datatype: " + dict.GetType());
 
+            // For each to print out all the keys and values
             foreach (KeyValuePair<string, string> kvp in dict)
             {
                 Console.ForegroundColor = ConsoleColor.Magenta;
@@ -93,6 +94,34 @@ namespace csty2.src
             else
             {
                 Console.WriteLine("Nina is not a Fetish Mistress");
+            }
+        }
+
+        // FIFO data type 
+        public static void Que1()
+        {
+            Utils.Label2("Queue Study");
+
+            Queue<string> queue = new Queue<string>();
+            queue.Enqueue("Nina");
+            queue.Enqueue("Mina");
+            queue.Enqueue("Dina");
+
+            Console.WriteLine("Total in Queue Datatype: " + queue.Count);
+            Console.WriteLine("Total in Queue Datatype: " + queue.GetType());
+
+            // For each to print out all the keys and values
+            foreach (string name in queue)
+            {
+                Console.ForegroundColor = ConsoleColor.Magenta;
+                Console.WriteLine("Fetish Mistress Queue: " + name);
+                Console.ResetColor();
+            }
+
+            // Using while to print the queue 
+            while (queue.Count > 0)
+            {
+                Console.WriteLine(queue.Dequeue());
             }
         }
 
