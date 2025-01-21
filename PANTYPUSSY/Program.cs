@@ -8,7 +8,7 @@ namespace csty2
     {
         static void Main(string[] args)
         {
-            Utils.Label1("Conditional Statments and Loops");
+            Utils.Label1("Conditional Statments and Loops and");
             Swit.Switch1();
         }
     }
