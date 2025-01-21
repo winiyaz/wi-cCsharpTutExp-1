@@ -27,12 +27,7 @@ namespace csty2.src
         {
             Utils.Label2("Collection Study");
 
-            List<string> mistress = new List<string>();
-            mistress.Add("Nina");
-            mistress.Add("Mina");
-            mistress.Add("Dina");
-            mistress.Add("Dina");
-            mistress.Add("Dina");
+            List<string> mistress = ["Nina", "Mina", "Dina", "Dina", "Dina"];
 
             Console.WriteLine(mistress.Count);
 
@@ -44,16 +39,18 @@ namespace csty2.src
             }
         }
 
-        // Hashset - Duplicates are not allowed
+        // Hashset also called set - Duplicates are not allowed
         public static void Has1()
         {
             Utils.Label2("HashSet Study");
-            HashSet<string> buty = new HashSet<string>();
-            buty.Add("Nin");
-            buty.Add("Mia");
-            buty.Add("Din");
-            buty.Add("Din");
-            buty.Add("Din");
+            HashSet<string> buty =
+            [
+                "Nin",
+                "Mia",
+                "Din", // Duplicaiton wont be printed
+                "Din", // Duplication wont be printed
+                "Din", // Diplication wont be printed
+            ];
 
             Console.WriteLine("Total in HashSet Datatype: " + buty.Count);
             Console.WriteLine("Total in HashSet Datatype: " + buty.GetType());
@@ -65,5 +62,42 @@ namespace csty2.src
                 Console.ResetColor();
             }
         }
+
+        // Dictionary Data Types
+        public static void Dict1()
+        {
+            Utils.Label2("Dictionary Study");
+            Dictionary<string, string> dict = new Dictionary<string, string>()
+            {
+                {"Nina", "Panty"},
+                {"Mina", "Mina"},
+                {"Dina", "Dina"}
+            };
+
+            Console.WriteLine("Total in Dictionary Datatype: " + dict.Count);
+            Console.WriteLine("Total in Dictionary Datatype: " + dict.GetType());
+
+            foreach (KeyValuePair<string, string> kvp in dict)
+            {
+                Console.ForegroundColor = ConsoleColor.Magenta;
+                Console.WriteLine("Fetish Mistress Dictionary: " + kvp.Key + " " + kvp.Value);
+                Console.ResetColor();
+            }
+
+            // Check existence of a kvp 
+            if (dict.TryGetValue("Nina", out string? value))
+            {
+                Console.WriteLine("Nina is a Fetish Mistress");
+                Console.WriteLine($"Nina + {value}");
+            }
+            else
+            {
+                Console.WriteLine("Nina is not a Fetish Mistress");
+            }
+        }
+
+        // New methods at this level 
     }
+
+    // New Classes at this level
 }

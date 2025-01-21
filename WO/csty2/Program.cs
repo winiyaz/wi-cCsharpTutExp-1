@@ -10,7 +10,7 @@ namespace csty2
         static void Main(string[] args)
         {
             Utils.Label1("Data Types Study");
-            Dataty.Has1();
+            Dataty.Dict1();
 
         }
     }
