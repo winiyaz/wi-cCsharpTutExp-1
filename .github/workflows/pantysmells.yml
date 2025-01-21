@@ -126,7 +126,7 @@ jobs:
         uses: softprops/action-gh-release@v2
         with:
           tag_name: smellypanty-v${{ github.run_number }}
-          name: smellypanty Release v${{ github.run_number }}
+          name: smellypanty-Squirt-v${{ github.run_number }}
           draft: false
           prerelease: false
           files: |
