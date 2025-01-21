@@ -8,8 +8,9 @@ namespace csty2
     {
         static void Main(string[] args)
         {
-            Utils.Label1("Conditional Statments and Loops");
-            Swit.Switch1();
+            Utils.Label1("Loops Now");
+            Loops.Loop2();
+
         }
     }
 }
