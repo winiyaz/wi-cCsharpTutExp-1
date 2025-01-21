@@ -5,7 +5,7 @@ on:
     branches:
       - main
     paths:
-      - "con1/ConsoleApp1/**"
+      - "PANTYPUSSY/**"
 
 permissions:
   contents: write # Required for creating releases
