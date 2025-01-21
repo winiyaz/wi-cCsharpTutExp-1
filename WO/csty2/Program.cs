@@ -6,10 +6,11 @@ namespace csty2
 {
     class Program
     {
+
         static void Main(string[] args)
         {
-            Utils.Label1("Array DataType Study");
-            ArayMethods1.Array1();
+            Utils.Label1("Data Types Study");
+            Dataty.Collection1();
 
         }
     }
