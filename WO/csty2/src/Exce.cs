@@ -50,7 +50,6 @@ namespace csty2.src
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine(ex.Message);
                 Console.WriteLine(ex.StackTrace);
-                throw;
             }
             finally
             {
