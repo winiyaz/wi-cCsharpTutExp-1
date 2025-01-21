@@ -23,6 +23,30 @@ namespace csty2.src
                 Console.WriteLine(ex.Message);
                 Console.WriteLine(ex.StackTrace);
             }
+
+            Utils.Label2("Exception Study Out of Bonds");
+
+            List<string> shapes = new List<string>{
+                "Square",
+                "Rectangle",
+                "Circle",
+                "Triangle"
+            };
+
+            try
+            {
+                Console.WriteLine(shapes[3]);
+            }
+            catch (IndexOutOfRangeException ex)
+            {
+                Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine(ex.Message);
+                Console.WriteLine(ex.StackTrace);
+            }
+            finally
+            {
+                Console.WriteLine("All Code Fucked Up");
+            }
         }
     }
 }
