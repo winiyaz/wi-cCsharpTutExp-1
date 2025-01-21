@@ -9,8 +9,10 @@ namespace csty2
 
         static void Main(string[] args)
         {
-            Utils.Label1("Methods Study");
-            Meths.Meth1();
+            Utils.Label1("Classes Study");
+
+            Person p1 = new Person("Nina", 20);
+            p1.Greet();
 
         }
     }

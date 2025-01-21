@@ -19,3 +19,4 @@ static void myfunf()
 }
 ```
 - Here the method is by default public
+- If you define a private method , then it will be private to the file 
