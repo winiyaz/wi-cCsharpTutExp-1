@@ -123,10 +123,43 @@ namespace csty2.src
             {
                 Console.WriteLine(queue.Dequeue());
             }
+
+            Console.WriteLine("Total in Queue Datatype Post Deque: " + queue.Count);
         }
 
-        // New methods at this level 
-    }
+        // Stack data type - Last In First Out
+        public static void Sta1()
+        {
+            Utils.Label2("Stack Study");
 
-    // New Classes at this level
+            Stack<string> stack = new Stack<string>();
+            stack.Push("Nina");
+            stack.Push("Mina");
+            stack.Push("Dina");
+
+            Console.WriteLine("Total in Stack Datatype: " + stack.Count);
+            Console.WriteLine("Total in Stack Datatype: " + stack.GetType());
+
+            // For each to print out all the keys and values
+            foreach (string name in stack)
+            {
+                Console.ForegroundColor = ConsoleColor.Magenta;
+                Console.WriteLine("Fetish Mistress Stack: " + name);
+                Console.ResetColor();
+            }
+
+            // Removing items from a stack 
+            while (stack.Count > 0)
+            {
+                // Using Pop to remove from the stack
+                Console.WriteLine(stack.Pop());
+            }
+
+            Console.WriteLine("Total in Stack Datatype Post Pop: " + stack.Count);
+
+            // New methods at this level 
+        }
+
+        // New Classes at this level
+    }
 }
