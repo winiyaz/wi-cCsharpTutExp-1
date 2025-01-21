@@ -8,8 +8,8 @@ namespace csty2
     {
         static void Main(string[] args)
         {
-            Utils.Label1("Loops Now");
-            Lop2.Dowi();
+            Utils.Label1("Array DataType Study");
+            ArayMethods1.Array1();
 
         }
     }

@@ -47,5 +47,16 @@ namespace csty2.src
             } while (i <= 5);
             Console.ResetColor();
         }
+
+        // For each Loop Test - For Collections and Arrays
+        public static void FoEa()
+        {
+            Utils.Label2("For Each Loop");
+            int[] numbers = { 1, 2, 3, 4, 5 }; // This is an array
+            foreach (int num in numbers)
+            {
+                Console.WriteLine($"For Each Loop - Count: {num}");
+            }
+        }
     }
 }
