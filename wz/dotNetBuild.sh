@@ -1,5 +1,5 @@
 #!/usr/bin/bash
-# This bash srcript is for installing the KL docker image here
+# This bash script is for installing the KL docker image here
 clear
 
 # Colors
@@ -15,11 +15,11 @@ export NC='\033[0m' # No Color
 # Commands
 b1() {
     echo -e "${CYAN} =============== "
-    echo -e "Building single Exe Fil for windows and linux"
+    echo -e "Building single Exe File for Windows and Linux"
     echo -e "===============${NC}"
 }
 
-# Buildin for Windows
+# Building for Windows
 c1() {
     CO1="dotnet publish -c Release -r win-x64 --self-contained /p:PublishSingleFile=true /p:PublishTrimmed=true /p:TrimMode=link"
     echo -e ""
@@ -31,6 +31,7 @@ c1() {
 
     if [ $exit_status -eq 0 ]; then
         echo -e "${GREEN}[+] Windows Build Finished ${NC}"
+        echo -e "${GREEN}$output${NC}"
     else
         echo -e "${RED}[!] Windows Build Failed ${NC}"
         echo -e "${RED}$output${NC}"
@@ -40,7 +41,7 @@ c1() {
     echo -e ""
 }
 
-# Building for linux
+# Building for Linux
 c2() {
     CO1="dotnet publish -c Release -r linux-x64 --self-contained /p:PublishSingleFile=true /p:PublishTrimmed=true /p:TrimMode=link"
     echo -e ""
@@ -52,6 +53,7 @@ c2() {
 
     if [ $exit_status -eq 0 ]; then
         echo -e "${GREEN}[+] linux-x64 Build Finished ${NC}"
+        echo -e "${GREEN}$output${NC}"
     else
         echo -e "${RED}[!] linux-x64 Build Failed ${NC}"
         echo -e "${RED}$output${NC}"
@@ -63,4 +65,5 @@ c2() {
 
 # Execution
 b1
+c1
 c2
