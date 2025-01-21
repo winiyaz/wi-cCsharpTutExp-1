@@ -24,11 +24,35 @@ c1() {
     echo -e "${GREEN}[-] Command Execute - dot new console -n <NewName> ${NC}"
     echo -e "${PURPLE}[*] Enter name of project: ${NC}"
     read -r projekt
+
     CO1="dotnet new console -n $projekt"
     CO2="eza -T $projekt"
+
     echo -e "${GREEN}[+] $projekt Created - DrinkHerPiss${NC}"
-    $CO1
-    $CO2
+
+    # Execute the first command and capture the output and exit status
+    output1=$($CO1 2>&1)
+    exit_status1=$?
+
+    if [ $exit_status1 -eq 0 ]; then
+        echo -e "${GREEN}[+] Project $projekt created successfully ${NC}"
+    else
+        echo -e "${RED}[!] Failed to create project $projekt ${NC}"
+        echo -e "${RED}$output1${NC}"
+        return 1
+    fi
+
+    # Execute the second command and capture the output and exit status
+    output2=$($CO2 2>&1)
+    exit_status2=$?
+
+    if [ $exit_status2 -eq 0 ]; then
+        echo -e "${GREEN}[+] eza command executed successfully ${NC}"
+    else
+        echo -e "${RED}[!] Failed to execute eza command ${NC}"
+        echo -e "${RED}$output2${NC}"
+        return 1
+    fi
 }
 
 # Execution

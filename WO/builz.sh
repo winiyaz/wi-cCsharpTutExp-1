@@ -24,18 +24,40 @@ c1() {
     CO1="dotnet publish -c Release -r win-x64 --self-contained /p:PublishSingleFile=true /p:PublishTrimmed=true /p:TrimMode=link"
     echo -e ""
     echo -e "${PURPLE}[-] Building for Windows ${NC}"
-    $CO1
-    echo -e "${GREEN}[+] Windows Build Finished ${NC}"
+
+    # Capture the output of the command
+    output=$($CO1 2>&1)
+    exit_status=$?
+
+    if [ $exit_status -eq 0 ]; then
+        echo -e "${GREEN}[+] Windows Build Finished ${NC}"
+    else
+        echo -e "${RED}[!] Windows Build Failed ${NC}"
+        echo -e "${RED}$output${NC}"
+        # Optionally, you can add more error handling or cleanup code here
+    fi
+
     echo -e ""
 }
 
 # Building for linux
 c2() {
-    CO2="dotnet publish -c Release -r linux-x64 --self-contained /p:PublishSingleFile=true /p:PublishTrimmed=true /p:TrimMode=link"
+    CO1="dotnet publish -c Release -r linux-x64 --self-contained /p:PublishSingleFile=true /p:PublishTrimmed=true /p:TrimMode=link"
     echo -e ""
-    echo -e "${PURPLE}[-] Building for LINUX ${NC}"
-    $CO2
-    echo -e "${GREEN}[+] Linux Build Finished ${NC}"
+    echo -e "${PURPLE}[-] Building for linux-x64 ${NC}"
+
+    # Capture the output of the command
+    output=$($CO1 2>&1)
+    exit_status=$?
+
+    if [ $exit_status -eq 0 ]; then
+        echo -e "${GREEN}[+] linux-x64 Build Finished ${NC}"
+    else
+        echo -e "${RED}[!] linux-x64 Build Failed ${NC}"
+        echo -e "${RED}$output${NC}"
+        # Optionally, you can add more error handling or cleanup code here
+    fi
+
     echo -e ""
 }
 
