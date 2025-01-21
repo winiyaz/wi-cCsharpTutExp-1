@@ -39,13 +39,13 @@ jobs:
             ${{ runner.os }}-nuget-
 
       - name: Restore dependencies
-        run: dotnet restore con1/ConsoleApp1/ConsoleApp1.csproj
+        run: dotnet restore PANTYPUSSY/pantypussy.csproj
 
       - name: Build
-        run: dotnet build con1/ConsoleApp1/ConsoleApp1.csproj --configuration Release --no-restore
+        run: dotnet build PANTYPUSSY/pantypussy.csproj --configuration Release --no-restore
 
       - name: Test
-        run: dotnet test con1/ConsoleApp1/ConsoleApp1.csproj --no-build --verbosity normal --logger "trx;LogFileName=TestResults/test-results.trx"
+        run: dotnet test PANTYPUSSY/pantypussy.csproj --no-build --verbosity normal --logger "trx;LogFileName=TestResults/test-results.trx"
 
       - name: Publish Test Results
         uses: actions/upload-artifact@v4
@@ -55,7 +55,7 @@ jobs:
         if: always()
 
       - name: Publish Single File Executable
-        run: dotnet publish con1/ConsoleApp1/ConsoleApp1.csproj --configuration Release -r ${{ matrix.runtime }} --self-contained -o ./publish /p:PublishSingleFile=true /p:PublishTrimmed=true /p:TrimMode=link
+        run: dotnet publish PANTYPUSSY/pantypussy.csproj --configuration Release -r ${{ matrix.runtime }} --self-contained -o ./publish /p:PublishSingleFile=true /p:PublishTrimmed=true /p:TrimMode=link
 
       - name: List Publish Directory (Debugging)
         run: |
@@ -80,12 +80,12 @@ jobs:
         if: matrix.os == 'windows-latest'
         shell: pwsh
         run: |
-          Compress-Archive -Path ./publish/* -DestinationPath con1-windows.zip
+          Compress-Archive -Path ./publish/* -DestinationPath smellypanty-windows.zip
 
       - name: Compress Artifacts (Linux)
         if: matrix.os == 'ubuntu-latest'
         run: |
-          tar -czvf con1-linux.tar.gz -C ./publish .
+          tar -czvf smellypanty-linux.tar.gz -C ./publish .
 
       - name: Clean Up (Optional)
         shell: pwsh
@@ -101,8 +101,8 @@ jobs:
         with:
           name: con1-${{ matrix.os }}
           path: |
-            con1-windows.zip
-            con1-linux.tar.gz
+            smellypanty-windows.zip
+            smellypanty-linux.tar.gz
 
   release:
     needs: build
@@ -125,12 +125,12 @@ jobs:
       - name: Create Release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: con1-v${{ github.run_number }}
-          name: con1 Release v${{ github.run_number }}
+          tag_name: smellypanty-v${{ github.run_number }}
+          name: smellypanty Release v${{ github.run_number }}
           draft: false
           prerelease: false
           files: |
-            ./artifacts/con1-windows-latest/con1-windows.zip
-            ./artifacts/con1-ubuntu-latest/con1-linux.tar.gz
+            ./artifacts/smellypanty-windows-latest/smellypanty-windows.zip
+            ./artifacts/smellypanty-ubuntu-latest/smellypanty-linux.tar.gz
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
