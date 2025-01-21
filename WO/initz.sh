@@ -36,6 +36,7 @@ c1() {
 
     if [ $exit_status1 -eq 0 ]; then
         echo -e "${GREEN}[+] Project $projekt created successfully ${NC}"
+        echo -e "${GREEN}$output1${NC}"
     else
         echo -e "${RED}[!] Failed to create project $projekt ${NC}"
         echo -e "${RED}$output1${NC}"
@@ -48,6 +49,7 @@ c1() {
 
     if [ $exit_status2 -eq 0 ]; then
         echo -e "${GREEN}[+] eza command executed successfully ${NC}"
+        echo -e "${GREEN}$output2${NC}"
     else
         echo -e "${RED}[!] Failed to execute eza command ${NC}"
         echo -e "${RED}$output2${NC}"
