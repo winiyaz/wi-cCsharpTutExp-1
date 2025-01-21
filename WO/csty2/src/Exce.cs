@@ -7,6 +7,7 @@ namespace csty2.src
     {
         public static void ExceptionMet1()
         {
+            Exce1();
             Exce2();
         }
 
