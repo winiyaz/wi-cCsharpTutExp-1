@@ -1,6 +1,6 @@
 
 1. [wi-cCsharpTutExp-1](#wi-ccsharptutexp-1)
-2. [PANTYPUSSY](#pantypussy)
+2. [Notes](#notes)
 
 
 # wi-cCsharpTutExp-1
@@ -8,6 +8,14 @@ https://github.com/winiyaz/cstut12 - Expz
 
 - Testing CsharpDotnetStuff Here 
 
-# PANTYPUSSY 
+# Notes 
 
-1. Move project files for building here
+1. By default when you  define a method , it is by default public 
+
+```charp
+static void myfunf() 
+{ 
+    Console.Writeline("Hello C#");
+}
+```
+- Here the method is by default public
