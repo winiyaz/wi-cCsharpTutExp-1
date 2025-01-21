@@ -1,6 +1,3 @@
-//Exception  handling 
-
-
 namespace csty2.src
 {
     class Exce
@@ -37,20 +34,21 @@ namespace csty2.src
 
         public static void Exce2()
         {
-            Utils.Label2("Exception Study Out of Bonds");
+            Utils.Label2("Exception Study Out of Bounds");
 
-            List<string> shapes = [
+            List<string> shapes = new List<string>
+            {
                 "Square",
                 "Rectangle",
                 "Circle",
                 "Triangle"
-            ];
+            };
 
             try
             {
                 Console.WriteLine(shapes[30]);
             }
-            catch (IndexOutOfRangeException ex)
+            catch (ArgumentOutOfRangeException ex)
             {
                 Console.ForegroundColor = ConsoleColor.Red;
                 Console.WriteLine(ex.Message);
