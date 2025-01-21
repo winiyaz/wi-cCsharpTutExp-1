@@ -99,7 +99,7 @@ jobs:
       - name: Upload Artifact
         uses: actions/upload-artifact@v4
         with:
-          name: con1-${{ matrix.os }}
+          name: PANTYPUSSY-${{ matrix.os }}
           path: |
             smellypanty-windows.zip
             smellypanty-linux.tar.gz
@@ -130,7 +130,7 @@ jobs:
           draft: false
           prerelease: false
           files: |
-            ./artifacts/con1-windows-latest/smellypanty-windows.zip
-            ./artifacts/con1-ubuntu-latest/smellypanty-linux.tar.gz
+            ./artifacts/PANTYPUSSY-windows-latest/smellypanty-windows.zip
+            ./artifacts/PANTYPUSSY-ubuntu-latest/smellypanty-linux.tar.gz
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

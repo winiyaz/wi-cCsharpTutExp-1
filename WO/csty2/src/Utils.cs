@@ -3,6 +3,7 @@ namespace csty2.src
 {
     public class Utils
     {
+        // Main Lanel 
         public static void Label1(string l1)
         {
             Console.ForegroundColor = ConsoleColor.DarkGreen;
@@ -13,6 +14,7 @@ namespace csty2.src
             Console.ResetColor();
         }
 
+        // Sub labels
         public static void Label2(string l2)
         {
             Console.ForegroundColor = ConsoleColor.DarkYellow;
