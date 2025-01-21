@@ -24,9 +24,27 @@ namespace csty2.src
             Console.ForegroundColor = ConsoleColor.DarkGray;
             while (i <= 5)
             {
-                Console.WriteLine($"Count: {i}");
+                Console.WriteLine($"Whiler Loop - Count: {i}");
                 i++; // Important counter to prevent an infinite loop
             }
+            Console.ResetColor();
+        }
+    }
+
+    // Secondary class made for testing C#
+    public class Lop2()
+    {
+        // Do while loops
+        public static void Dowi()
+        {
+            Utils.Label2("Do While Loop");
+            int i = 1;
+            Console.ForegroundColor = ConsoleColor.DarkGray;
+            do
+            {
+                Console.WriteLine($"Do Whiler - Count: {i}");
+                i++; // Important counter to prevent an infinite loop
+            } while (i <= 5);
             Console.ResetColor();
         }
     }

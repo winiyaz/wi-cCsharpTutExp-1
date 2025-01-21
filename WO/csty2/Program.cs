@@ -9,7 +9,7 @@ namespace csty2
         static void Main(string[] args)
         {
             Utils.Label1("Loops Now");
-            Loops.Loop2();
+            Lop2.Dowi();
 
         }
     }
