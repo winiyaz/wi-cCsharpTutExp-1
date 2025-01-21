@@ -9,8 +9,8 @@ namespace csty2
 
         static void Main(string[] args)
         {
-            Utils.Label1("Exception Handling");
-            Exce.ExceptionMet1();
+            Utils.Label1("C# Study");
+            Console.WriteLine("Call the methods from each file to see whats happening");
 
         }
     }

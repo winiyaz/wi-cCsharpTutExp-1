@@ -8,6 +8,7 @@ namespace csty2.src
             Exce2();
         }
 
+        // First Exception Handling Study
         public static void Exce1()
         {
             Utils.Label2("Exception Study");
@@ -32,6 +33,7 @@ namespace csty2.src
             }
         }
 
+        // Second Exception Handling Study
         public static void Exce2()
         {
             Utils.Label2("Exception Study Out of Bounds");
